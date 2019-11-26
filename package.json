@@ -1,0 +1,21 @@
+{
+  "name": "sp_list_extractor",
+  "version": "0.0.1",
+  "description": "App-only permissions application to extract data from a SharePoint list",
+  "main": "app.js",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jozzey/sp-list-extractor"
+  },
+  "dependencies": {
+    "q": "^1.5.1",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {
+    "mocha": "^6.2.2"
+  },
+  "scripts": {
+    "start": "mocha ./tests/confTest.js && node app.js"
+  }
+}
