@@ -1,5 +1,5 @@
-const assert = require('assert');
-const conf = require('../config');
+const assert = require('assert')
+const conf = require('../config')
 
 describe('ADAL', function () { // eslint-disable-line no-undef
   it( // eslint-disable-line no-undef
@@ -14,37 +14,37 @@ describe('ADAL', function () { // eslint-disable-line no-undef
         'Sign on URL: http://localhost:3000\n' +
         'App permissions: Microsoft Graph > Read items in all site collections\n\n' +
         'Note: These are application permissions, not delegated permissions.'
-      );
+      )
     }
-  );
-});
+  )
+})
 
-function isADALConfigured(configuration) {
+function isADALConfigured (configuration) {
   var clientIDConfigured =
-    typeof(configuration.clientId) !== 'undefined' &&
+    typeof (configuration.clientId) !== 'undefined' &&
     configuration.clientId !== null &&
     configuration.clientId !== '' &&
-    configuration.clientId !== 'ENTER_YOUR_CLIENT_ID';
+    configuration.clientId !== 'ENTER_YOUR_CLIENT_ID'
   var clientSecretConfigured =
-    typeof(configuration.clientSecret) !== 'undefined' &&
+    typeof (configuration.clientSecret) !== 'undefined' &&
     configuration.clientSecret !== null &&
     configuration.clientSecret !== '' &&
-    configuration.clientSecret !== 'ENTER_YOUR_SECRET';
+    configuration.clientSecret !== 'ENTER_YOUR_SECRET'
   var tokenEndpointConfigured =
-    typeof(configuration.tokenEndpoint) !== 'undefined' &&
+    typeof (configuration.tokenEndpoint) !== 'undefined' &&
     configuration.tokenEndpoint !== null &&
     configuration.tokenEndpoint !== '' &&
-    configuration.tokenEndpoint !== 'ENTER_YOUR_TOKEN_ISSUING_ENDPOINT';
+    configuration.tokenEndpoint !== 'ENTER_YOUR_TOKEN_ISSUING_ENDPOINT'
   var siteIdConfigured =
-    typeof(configuration.siteId) !== 'undefined' &&
+    typeof (configuration.siteId) !== 'undefined' &&
     configuration.siteId !== null &&
     configuration.siteId !== '' &&
-    configuration.siteId !== 'ENTER_YOUR_SITE_ID';
+    configuration.siteId !== 'ENTER_YOUR_SITE_ID'
   var listIdConfigured =
-    typeof(configuration.listId) !== 'undefined' &&
+    typeof (configuration.listId) !== 'undefined' &&
     configuration.listId !== null &&
     configuration.listId !== '' &&
-    configuration.listId !== 'ENTER_YOUR_LIST_ID';
+    configuration.listId !== 'ENTER_YOUR_LIST_ID'
 
-  return clientIDConfigured && clientSecretConfigured && tokenEndpointConfigured && siteIdConfigured && listIdConfigured;
+  return clientIDConfigured && clientSecretConfigured && tokenEndpointConfigured && siteIdConfigured && listIdConfigured
 }
