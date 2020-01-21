@@ -20,27 +20,27 @@ describe('ADAL', function () { // eslint-disable-line no-undef
 })
 
 function isADALConfigured (configuration) {
-  var clientIDConfigured =
+  const clientIDConfigured =
     typeof (configuration.clientId) !== 'undefined' &&
     configuration.clientId !== null &&
     configuration.clientId !== '' &&
     configuration.clientId !== 'ENTER_YOUR_CLIENT_ID'
-  var clientSecretConfigured =
+  const clientSecretConfigured =
     typeof (configuration.clientSecret) !== 'undefined' &&
     configuration.clientSecret !== null &&
     configuration.clientSecret !== '' &&
     configuration.clientSecret !== 'ENTER_YOUR_SECRET'
-  var tokenEndpointConfigured =
+  const tokenEndpointConfigured =
     typeof (configuration.tokenEndpoint) !== 'undefined' &&
     configuration.tokenEndpoint !== null &&
     configuration.tokenEndpoint !== '' &&
     configuration.tokenEndpoint !== 'ENTER_YOUR_TOKEN_ISSUING_ENDPOINT'
-  var siteIdConfigured =
+  const siteIdConfigured =
     typeof (configuration.siteId) !== 'undefined' &&
     configuration.siteId !== null &&
     configuration.siteId !== '' &&
     configuration.siteId !== 'ENTER_YOUR_SITE_ID'
-  var listIdConfigured =
+  const listIdConfigured =
     typeof (configuration.listId) !== 'undefined' &&
     configuration.listId !== null &&
     configuration.listId !== '' &&

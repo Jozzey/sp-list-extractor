@@ -3,16 +3,16 @@ const Q = require('q')
 const config = require('./config')
 
 // The auth module object.
-var auth = {}
+const auth = {}
 
 // @name getAccessToken
 // @desc Makes a request for a token using client credentials.
 auth.getAccessToken = function () {
-  var deferred = Q.defer()
+  const deferred = Q.defer()
 
   // These are the parameters necessary for the OAuth 2.0 Client Credentials Grant Flow.
   // For more information, see Service to Service Calls Using Client Credentials (https://msdn.microsoft.com/library/azure/dn645543.aspx).
-  var requestParams = {
+  const requestParams = {
     grant_type: 'client_credentials',
     client_id: config.clientId,
     client_secret: config.clientSecret,
@@ -21,7 +21,7 @@ auth.getAccessToken = function () {
 
   // Make a request to the token issuing endpoint.
   request.post({ url: config.tokenEndpoint, form: requestParams }, function (err, response, body) {
-    var parsedBody = JSON.parse(body)
+    const parsedBody = JSON.parse(body)
 
     if (err) {
       deferred.reject(err)
