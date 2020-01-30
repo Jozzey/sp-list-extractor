@@ -13,8 +13,8 @@ auth.getAccessToken().then((token) => {
         console.log('Data saved!')
       })
     }, (error) => {
-      console.error('>>> Error getting list data: ' + error)
+      console.error(`>>> Error getting list data: ${error}`)
     })
 }, (error) => {
-  console.error('>>> Error getting access token: ' + error)
+  console.error(`>>> Error getting access token: ${error}`)
 })
