@@ -1,6 +1,6 @@
 const request = require('request')
 const Q = require('q')
-const config = require('./config')
+const { clientId, clientSecret, tokenEndpoint } = require('./config')
 
 // The auth module object.
 const auth = {}
@@ -14,13 +14,13 @@ auth.getAccessToken = function () {
   // For more information, see Service to Service Calls Using Client Credentials (https://msdn.microsoft.com/library/azure/dn645543.aspx).
   const requestParams = {
     grant_type: 'client_credentials',
-    client_id: config.clientId,
-    client_secret: config.clientSecret,
+    client_id: clientId,
+    client_secret: clientSecret,
     scope: 'https://graph.microsoft.com/.default'
   }
 
   // Make a request to the token issuing endpoint.
-  request.post({ url: config.tokenEndpoint, form: requestParams }, function (err, response, body) {
+  request.post({ url: tokenEndpoint, form: requestParams }, (err, response, body) => {
     const parsedBody = JSON.parse(body)
 
     if (err) {

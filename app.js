@@ -1,20 +1,20 @@
 const auth = require('./auth')
 const graph = require('./graph')
-const fs = require('fs')
+const { writeFile } = require('fs')
 
 // Get an access token for the app.
-auth.getAccessToken().then(function (token) {
+auth.getAccessToken().then((token) => {
   // Get all of the data from the list.
   graph.getData(token)
-    .then(function (data) {
+    .then((data) => {
       // Write the list data to a file
-      fs.writeFile('data.json', JSON.stringify(data), function (err) {
+      writeFile('data.json', JSON.stringify(data), (err) => {
         if (err) throw err
         console.log('Data saved!')
       })
-    }, function (error) {
+    }, (error) => {
       console.error('>>> Error getting list data: ' + error)
     })
-}, function (error) {
+}, (error) => {
   console.error('>>> Error getting access token: ' + error)
 })
